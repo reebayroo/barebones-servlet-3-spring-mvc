@@ -1,19 +1,33 @@
+<aside class="menu">
 
-<ul class="nav nav-sidebar">
-	<li class="active"><a href="#">Overview</a></li>
-	<li><a href="#">Reports</a></li>
-	<li><a href="#">Analytics</a></li>
-	<li><a href="#">Export</a></li>
-</ul>
-<ul class="nav nav-sidebar">
-	<li><a href="">Nav item</a></li>
-	<li><a href="">Nav item again</a></li>
-	<li><a href="">One more nav</a></li>
-	<li><a href="">Another nav item</a></li>
-	<li><a href="">More navigation</a></li>
-</ul>
-<ul class="nav nav-sidebar">
-	<li><a href="">Nav item again</a></li>
-	<li><a href="">One more nav</a></li>
-	<li><a href="">Another nav item</a></li>
-</ul>
+	<div class="ui fluid vertical menu">
+		<div class="header item">
+			<i class="user icon"></i>
+			Communities
+		</div>
+		<div class="item">
+			College
+			<div class="menu">
+				<a class="item">Baseball</a>
+				<a class="item">Basketball</a>
+				<a class="item">Golf</a>
+			</div>
+		</div>
+		<a class="item"> Dance </a>
+		<a class="item"> Aerobics </a>
+		<div class="header item">
+			<i class="globe icon"></i>
+			Cities
+		</div>
+		<a class="item"> New York </a>
+		<a class="item"> Montreal </a>
+		<a class="item"> Los Angeles </a>
+		<a class="item"> San Francisco </a>
+		<div class="header item">
+			<i class="icon calendar"></i>
+			Months
+		</div>
+		<a class="item"> August </a>
+		<a class="item"> June </a>
+	</div>
+</aside>

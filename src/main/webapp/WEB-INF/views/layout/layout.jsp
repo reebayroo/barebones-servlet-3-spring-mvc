@@ -29,22 +29,15 @@
 <%@ include file="inclusions.jsp"%>
 </head>
 <body class="${bodyClass}">
-
 	<tiles:insertAttribute name="header" />
-
-	<div class="main-container">
-		<div class="row">
-			<div class="col-sm-2 sidebar">
-				<tiles:insertAttribute name="menu" />
-			</div>
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				<h1 class="page-header">${title}</h1>
-				<tiles:insertAttribute name="messages" />
-				<tiles:insertAttribute name="body" />
-			</div>
-		</div>
-	</div>
+	<tiles:insertAttribute name="menu" />
+	<section class="main">
+	<tiles:insertAttribute name="messages" />
+		<tiles:insertAttribute name="body" />
+	</section>
 	<tiles:insertAttribute name="footer" />
+
+
 	<c:if test="${not empty moduleScript}">
 		<custom:js src="/assets/js/modules/${moduleScript}" />
 	</c:if>

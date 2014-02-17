@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class RootController {
 
-	@RequestMapping("/")
+	@RequestMapping({"/index", "/"})
 	public String index() {
 		return ".index";
 	}
@@ -16,6 +16,6 @@ public class RootController {
 	}	
 	@RequestMapping("/about")
 	public String about() {
-		return "about";
+		return ".about";
 	}	
 }

@@ -193,10 +193,10 @@
 			<resource>
 				<directory>src/main/resources</directory>
 				<filtering>false</filtering>
-				<excludes>
+<!-- 				<excludes>
 					<exclude>log4j.properties</exclude>
 				</excludes>
-			</resource>
+ -->			</resource>
 		</resources>
 
 		<plugins>

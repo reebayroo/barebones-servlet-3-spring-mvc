@@ -21,11 +21,17 @@
 		<put-attribute name="title" type="string" value="Home" />
 	</definition>
 
-	<definition name=".login-layout" template="/WEB-INF/views/layout/login_layout.jsp">
+	<definition name=".about" extends=".layout">
+		<put-attribute name="body" value="/WEB-INF/views/about.jsp" />
+		<put-attribute name="current-menu" value="about" />
+		<put-attribute name="body-class" type="string" value="about" />
+		<put-attribute name="title" type="string" value="About" />
+	</definition>
+	
+<!-- 	<definition name=".login-layout" template="/WEB-INF/views/layout/login_layout.jsp">
 		<put-attribute name="header" value="/WEB-INF/views/layout/header.jsp" />
 		<put-attribute name="body" value="" />
 	</definition>
-
 	<definition name=".login" extends=".login-layout">
 		<put-attribute name="body" value="/WEB-INF/views/login.jsp" />
 	</definition>
@@ -37,7 +43,7 @@
 	</definition>
 	<definition name=".about" extends=".login-layout">
 		<put-attribute name="body" value="/WEB-INF/views/about.jsp" />
-	</definition>
+	</definition> 
 	<definition name=".error" extends=".login-layout">
 		<put-attribute name="body" value="/WEB-INF/views/error.jsp" />
 	</definition>
@@ -68,22 +74,6 @@
 		<put-attribute name="body-class" type="string" value="home" />
 	</definition>
 
-	
-	<definition name=".changelogs.base" extends=".layout">
-		<put-attribute name="current-menu" value="change-logs" />
-		<put-attribute name="body-class" type="string" value="changelogs" />
-		<put-attribute name="module-script" type="string" value="changelogs.js" />
-	</definition>
-	<definition name=".changelogs.list" extends=".changelogs.base">
-		<put-attribute name="body" value="/WEB-INF/views/changelogs/list.jsp" />
-	</definition>
-	<definition name=".changelogs.details" extends=".changelogs.base">
-		<put-attribute name="body"
-			value="/WEB-INF/views/changelogs/details.jsp" />
-	</definition>
-	<definition name=".changelogs.display.entity.logs" extends=".changelogs.base">
-		<put-attribute name="body"
-			value="/WEB-INF/views/changelogs/display-entity-logs.jsp" />
-	</definition>
-
+	 
+-->
 </tiles-definitions>
