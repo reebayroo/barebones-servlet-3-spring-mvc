@@ -14336,6 +14336,29 @@ body:after {
 body:after {
   clear: both;
 }
+html,
+body {
+  font-size: 15px;
+  height: 100%;
+}
+body {
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  background: #FFFFFF;
+  margin: 0px;
+  padding: 0px;
+  color: #555555;
+  text-rendering: optimizeLegibility;
+  min-width: 320px;
+}
+header h1 {
+  display: inline;
+  float: left;
+  width: 81.25%;
+  margin: 0 1.0416666666666665%;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
 header.menu {
   display: inline;
   float: left;
@@ -14354,6 +14377,7 @@ section.main {
   float: left;
   width: 72.91666666666666%;
   margin: 0 1.0416666666666665%;
+  min-height: 900px;
 }
 footer {
   display: inline;

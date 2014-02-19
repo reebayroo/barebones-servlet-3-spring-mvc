@@ -31,7 +31,7 @@ Installation
 --------------
 
 ```sh
-git clone [git-repo-url] yourproject && yourproject
+git clone [git-repo-url] yourproject && cd yourproject
  
 mvn clean package
 mvn jetty:run
@@ -40,7 +40,6 @@ mvn jetty:run
 
 **Free Software, Hell Yeah!**
 
-[Bootstrap 3]:http://getbootstrap.com/
 [Semantic Grids]:http://semantic.gs/
 [Semantic UI]:http://semantic-ui.com/
 

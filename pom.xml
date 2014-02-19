@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>Barebones Web App with J2ee Spring MVC 3</name>
+	<name>Barebones</name>
 
 	<properties>
 		<java.version>1.7</java.version>

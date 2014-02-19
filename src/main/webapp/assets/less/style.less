@@ -43,6 +43,28 @@
 @columns: 12;
 @total-width: 100%;
 
+html,
+body {
+  font-size: 15px;
+  height: 100%;
+}
+
+body {
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  background: #FFFFFF;
+  margin: 0px;
+  padding: 0px;
+  color: #555555;
+  text-rendering: optimizeLegibility;
+  min-width: 320px;
+}
+header h1 { 
+	float:left;
+	.column(10);
+	height: auto;
+	padding-top: 10px;
+	padding-bottom: 30px;
+}
 header.menu {
   .column(12);
 }
@@ -52,6 +74,7 @@ aside.menu {
 }
 section.main {
    .column(9);
+     min-height: 900px;
 }
 footer {
 	.column(12);

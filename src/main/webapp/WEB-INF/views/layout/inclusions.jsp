@@ -10,5 +10,6 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
 <custom:link href="/assets/images/favicon.ico" rel="shortcut icon" />
 <custom:link href="/assets/stylesheets/style.css" rel="stylesheet" type="text/css"/>
