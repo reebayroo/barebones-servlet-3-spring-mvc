@@ -6,51 +6,26 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.stereotype.Service;
-
 @Service
-@PropertySource("classpath:metadata.properties")
-public class MetadataProperties {
+@PropertySource( "classpath:system-${spring.profiles.active}.properties"  )
+public class SystemProperties {
 	@Autowired
-	@Value("${build.date}")
-	private String buildDate;
+	@Value("${company.name}")
+	private String companyName;
 
-	@Autowired
-	@Value("${version}")
-	private String version;
-
-	@Autowired
-	@Value("${project.name}")
-	private String projectName;
-
-	public String getBuildDate() {
-		return buildDate;
+	public String getCompanyName() {
+		return companyName;
 	}
 
-	public void setBuildDate(String buildDate) {
-		this.buildDate = buildDate;
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
 
-	public String getVersion() {
-		return version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-	}
-
-	public String getProjectName() {
-		return projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-	}
-
-	@Bean(name = "metadatapspc")
+	@Bean(name="systempspc")
 	public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
 		PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
 		propertySourcesPlaceholderConfigurer.setIgnoreUnresolvablePlaceholders(false);
-		propertySourcesPlaceholderConfigurer.setOrder(1);
+		propertySourcesPlaceholderConfigurer.setOrder(2);
 		return propertySourcesPlaceholderConfigurer;
 	}
 
