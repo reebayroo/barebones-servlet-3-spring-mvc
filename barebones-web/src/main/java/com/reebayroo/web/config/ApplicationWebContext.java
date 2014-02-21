@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -13,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.handler.HandlerExceptionResolverComposite;
 import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
- import org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver;
+import org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver;
 import org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
@@ -21,10 +22,12 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 import org.springframework.web.servlet.view.tiles2.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles2.TilesView;
 
+import com.reebayroo.service.config.ApplicationServiceContext;
+
 @Configuration
 @ComponentScan(basePackages = "com.reebayroo.web")
 @EnableWebMvc
-public class WebMVCApplicationContext extends WebMvcConfigurerAdapter {
+public class ApplicationWebContext extends WebMvcConfigurerAdapter {
 
 	@Bean(name = "viewResolver")
 	public ViewResolver viewResolver() {
@@ -80,7 +83,6 @@ public class WebMVCApplicationContext extends WebMvcConfigurerAdapter {
 		return r;
 	}
 
-
 	@Bean
 	HandlerExceptionResolverComposite getHandlerExceptionResolverComposite() {
 
@@ -88,7 +90,7 @@ public class WebMVCApplicationContext extends WebMvcConfigurerAdapter {
 
 		List<HandlerExceptionResolver> l = new ArrayList<HandlerExceptionResolver>();
 
- 		l.add(new ResponseStatusExceptionResolver());
+		l.add(new ResponseStatusExceptionResolver());
 		l.add(createSimpleMappingExceptionResolver());
 		l.add(new DefaultHandlerExceptionResolver());
 

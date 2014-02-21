@@ -9,6 +9,8 @@ import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
+import com.reebayroo.service.config.ApplicationServiceContext;
+
 public class WebInitializer implements WebApplicationInitializer {
 
 	@Override
@@ -16,17 +18,17 @@ public class WebInitializer implements WebApplicationInitializer {
 		AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
 
 		// Normal Spring Bean Context - Bean, Services, DAO's, etc.
-//		rootContext.register(ApplicationContext.class);
 
 		ContextLoaderListener loaderListener = new ContextLoaderListener(rootContext);
 		servletContext.addListener(loaderListener);
 
-		AnnotationConfigWebApplicationContext dispatcherContext = new AnnotationConfigWebApplicationContext();
+//		AnnotationConfigWebApplicationContext dispatcherContext = new AnnotationConfigWebApplicationContext();
 
 		// Spring Web Context, Controllers, and such.
-		dispatcherContext.register(WebMVCApplicationContext.class);
+		rootContext.register(ApplicationWebContext.class);
+		rootContext.register(ApplicationServiceContext.class);
 
-		DispatcherServlet dispatcherServlet = new DispatcherServlet(dispatcherContext);
+		DispatcherServlet dispatcherServlet = new DispatcherServlet(rootContext);
 		ServletRegistration.Dynamic dispatcher = servletContext.addServlet("DispatcherServlet", dispatcherServlet);
 		dispatcher.setLoadOnStartup(1);
 		dispatcher.addMapping("/");
