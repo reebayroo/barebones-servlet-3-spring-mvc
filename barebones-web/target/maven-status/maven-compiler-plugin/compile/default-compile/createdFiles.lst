@@ -1,0 +1,6 @@
+com/reebayroo/web/config/WebMVCApplicationContext.class
+com/reebayroo/web/config/MetadataProperties.class
+com/reebayroo/web/config/SystemProperties.class
+com/reebayroo/web/controllers/RootController.class
+com/reebayroo/web/config/WebInitializer.class
+com/reebayroo/web/config/SystemPropertyServletContextInjector.class

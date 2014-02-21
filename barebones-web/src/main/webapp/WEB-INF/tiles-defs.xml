@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" "http://tiles.apache.org/dtds/tiles-config_2_0.dtd" >
+<tiles-definitions>
+
+	<definition name=".layout" template="/WEB-INF/views/layout/layout.jsp">
+		<put-attribute name="menu" value="/WEB-INF/views/layout/menu.jsp" />
+		<put-attribute name="header" value="/WEB-INF/views/layout/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp" />
+		<put-attribute name="messages" value="/WEB-INF/views/layout/messages.jsp" />
+
+		<put-attribute name="title" type="string" value="" />
+		<put-attribute name="body-class" type="string" value="" />
+		<put-attribute name="current-menu" value="none" />
+		<put-attribute name="module-script" type="string" value="" />
+	</definition>
+
+	<definition name=".index" extends=".layout">
+		<put-attribute name="body" value="/WEB-INF/views/index.jsp" />
+		<put-attribute name="current-menu" value="index" />
+		<put-attribute name="body-class" type="string" value="index" />
+		<put-attribute name="title" type="string" value="Home" />
+	</definition>
+
+	<definition name=".about" extends=".layout">
+		<put-attribute name="body" value="/WEB-INF/views/about.jsp" />
+		<put-attribute name="current-menu" value="about" />
+		<put-attribute name="body-class" type="string" value="about" />
+		<put-attribute name="title" type="string" value="About" />
+	</definition>
+	
+<!-- 	<definition name=".login-layout" template="/WEB-INF/views/layout/login_layout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/layout/header.jsp" />
+		<put-attribute name="body" value="" />
+	</definition>
+	<definition name=".login" extends=".login-layout">
+		<put-attribute name="body" value="/WEB-INF/views/login.jsp" />
+	</definition>
+	<definition name=".login" extends=".login-layout">
+		<put-attribute name="body" value="/WEB-INF/views/login.jsp" />
+	</definition>
+	<definition name=".access-denied" extends=".login-layout">
+		<put-attribute name="body" value="/WEB-INF/views/access-denied.jsp" />
+	</definition>
+	<definition name=".about" extends=".login-layout">
+		<put-attribute name="body" value="/WEB-INF/views/about.jsp" />
+	</definition> 
+	<definition name=".error" extends=".login-layout">
+		<put-attribute name="body" value="/WEB-INF/views/error.jsp" />
+	</definition>
+	<definition name=".notfound" extends=".login-layout">
+		<put-attribute name="body" value="/WEB-INF/views/notfound.jsp" />
+	</definition>
+	<definition name=".users.base" extends=".layout">
+		<put-attribute name="current-menu" value="users" />
+		<put-attribute name="body-class" type="string" value="users" />
+		<put-attribute name="module-script" type="string" value="users-ck.js" />
+	</definition>
+
+	<definition name=".users.list" extends=".users.base">
+		<put-attribute name="body" value="/WEB-INF/views/users/list.jsp" />
+	</definition>
+	<definition name=".users.edit" extends=".users.base">
+		<put-attribute name="body" value="/WEB-INF/views/users/edit.jsp" />
+
+	</definition>
+	<definition name=".users.delete" extends=".users.base">
+		<put-attribute name="body" value="/WEB-INF/views/users/delete.jsp" />
+	</definition>
+
+	<definition name=".system-parameters.view" extends=".layout">
+		<put-attribute name="body"
+			value="/WEB-INF/views/system-parameters/view.jsp" />
+		<put-attribute name="current-menu" value="system-parameters" />
+		<put-attribute name="body-class" type="string" value="home" />
+	</definition>
+
+	 
+-->
+</tiles-definitions>
