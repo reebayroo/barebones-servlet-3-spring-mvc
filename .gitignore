@@ -6,3 +6,6 @@
 *.ear
 /target
 */target/*
+.classpath
+.settings
+.project

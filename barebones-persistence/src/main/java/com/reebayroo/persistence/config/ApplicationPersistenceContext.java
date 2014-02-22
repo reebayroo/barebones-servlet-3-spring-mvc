@@ -16,7 +16,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 
 @Configuration
-@ComponentScan(basePackages="com.reebayroo.service.")
+@ComponentScan(basePackages="com.reebayroo.persistence")
 public class ApplicationPersistenceContext{
 	@Autowired
 	private DataSource datasource;
@@ -25,10 +25,11 @@ public class ApplicationPersistenceContext{
 
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean() {
-		LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
+		final LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
 		factoryBean.setDataSource(this.datasource);
 		factoryBean.setPackagesToScan(new String[] { "com.reebayroo.persistence.domain", //
-				"com.reebayroo.persistence.dao" });
+				"com.reebayroo.persistence.dao",
+				"com.reebayroo.persistence.dao.impl"});
 		factoryBean.setJpaVendorAdapter(vendorAdapter);
 
 		return factoryBean;
@@ -41,7 +42,7 @@ public class ApplicationPersistenceContext{
 
 	@Bean
 	public PlatformTransactionManager transactionManager() {
-		JpaTransactionManager transactionManager = new JpaTransactionManager();
+		final JpaTransactionManager transactionManager = new JpaTransactionManager();
 		transactionManager.setEntityManagerFactory(this.entityManagerFactoryBean().getObject());
 
 		return transactionManager;
