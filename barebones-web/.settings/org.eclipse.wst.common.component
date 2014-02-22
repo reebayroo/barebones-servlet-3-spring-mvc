@@ -8,6 +8,9 @@
         <dependent-module archiveName="barebones-service-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/barebones-service/barebones-service">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="barebones-persistence-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/barebones-persistence/barebones-persistence">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="myapp"/>
         <property name="java-output-path" value="/barebones-web/target/classes"/>
     </wb-module>

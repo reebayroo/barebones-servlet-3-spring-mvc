@@ -4,23 +4,27 @@
 	<modelVersion>4.0.0</modelVersion>
 
 
-    <parent>
-        <groupId>com.reebayroo</groupId>
-        <artifactId>barebones</artifactId>
+	<parent>
+		<groupId>com.reebayroo</groupId>
+		<artifactId>barebones</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
-    </parent>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
 
 
- 	<artifactId>barebones-service</artifactId>
- 	<packaging>jar</packaging>
+	<artifactId>barebones-service</artifactId>
+	<packaging>jar</packaging>
 
 	<name>Barebones - Services Layer</name>
 
 
 	<dependencies>
 
-	
+		<dependency>
+			<groupId>com.reebayroo</groupId>
+			<artifactId>barebones-persistence</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 		<!-- Log APIs -->
 
 		<dependency>
@@ -30,26 +34,29 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			
+
 		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
-			
+
 		</dependency>
+
+
+
 		<!-- JavaEE APIs -->
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			
+
 			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
-			
+
 		</dependency>
 
 
@@ -57,12 +64,12 @@
 		<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-api</artifactId>
-			
+
 		</dependency>
 		<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-jsp</artifactId>
-			
+
 		</dependency>
 
 		<!-- Spring -->
@@ -172,10 +179,8 @@
 			<resource>
 				<directory>src/main/resources</directory>
 				<filtering>false</filtering>
-<!-- 				<excludes>
-					<exclude>log4j.properties</exclude>
-				</excludes>
- -->			</resource>
+				<!-- <excludes> <exclude>log4j.properties</exclude> </excludes> -->
+			</resource>
 		</resources>
 
 		<plugins>
