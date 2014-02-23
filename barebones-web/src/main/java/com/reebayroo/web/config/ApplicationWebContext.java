@@ -27,11 +27,12 @@ import com.reebayroo.service.config.ApplicationServiceContext;
 @Configuration
 @ComponentScan(basePackages = "com.reebayroo.web")
 @EnableWebMvc
+@Import(ApplicationServiceContext.class)
 public class ApplicationWebContext extends WebMvcConfigurerAdapter {
 
 	@Bean(name = "viewResolver")
 	public ViewResolver viewResolver() {
-		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+		final InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 		resolver.setViewClass(JstlView.class);
 		resolver.setPrefix("/WEB-INF/views/");
 		resolver.setSuffix(".jsp");
@@ -41,14 +42,14 @@ public class ApplicationWebContext extends WebMvcConfigurerAdapter {
 
 	@Bean(name = "tilesViewResolver")
 	public ViewResolver tilesViewResolver() {
-		UrlBasedViewResolver resolver = new UrlBasedViewResolver();
+		final UrlBasedViewResolver resolver = new UrlBasedViewResolver();
 		resolver.setViewClass(TilesView.class);
 		resolver.setOrder(1);
 		return resolver;
 	}
 
 	@Override
-	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+	public void addResourceHandlers(final ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/assets/**").addResourceLocations("/assets/").setCachePeriod(Integer.MAX_VALUE);
 	}
 
@@ -59,7 +60,7 @@ public class ApplicationWebContext extends WebMvcConfigurerAdapter {
 
 	@Bean(name = "tilesConfigurer")
 	public TilesConfigurer tilesConfigurer() {
-		TilesConfigurer tilesConfigurer = new TilesConfigurer();
+		final TilesConfigurer tilesConfigurer = new TilesConfigurer();
 		tilesConfigurer.setDefinitions(new String[] {//
 				"/WEB-INF/tiles-defs.xml" //
 				});
@@ -69,7 +70,7 @@ public class ApplicationWebContext extends WebMvcConfigurerAdapter {
 
 	@Bean(name = "simpleMappingExceptionResolver")
 	public SimpleMappingExceptionResolver createSimpleMappingExceptionResolver() {
-		SimpleMappingExceptionResolver r = new SimpleMappingExceptionResolver();
+		final SimpleMappingExceptionResolver r = new SimpleMappingExceptionResolver();
 
 		// Properties mappings = new Properties();
 		// mappings.setProperty("DatabaseException", "databaseError");
@@ -86,9 +87,9 @@ public class ApplicationWebContext extends WebMvcConfigurerAdapter {
 	@Bean
 	HandlerExceptionResolverComposite getHandlerExceptionResolverComposite() {
 
-		HandlerExceptionResolverComposite result = new HandlerExceptionResolverComposite();
+		final HandlerExceptionResolverComposite result = new HandlerExceptionResolverComposite();
 
-		List<HandlerExceptionResolver> l = new ArrayList<HandlerExceptionResolver>();
+		final List<HandlerExceptionResolver> l = new ArrayList<HandlerExceptionResolver>();
 
 		l.add(new ResponseStatusExceptionResolver());
 		l.add(createSimpleMappingExceptionResolver());

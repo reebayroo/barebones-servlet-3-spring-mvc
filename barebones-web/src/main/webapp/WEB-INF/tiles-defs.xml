@@ -30,7 +30,7 @@
 	<definition name=".users.base" extends=".layout">
 		<put-attribute name="current-menu" value="users" />
 		<put-attribute name="body-class" type="string" value="users" />
-		<put-attribute name="module-script" type="string" value="users-ck.js" />
+		<put-attribute name="module-script" type="string" value="users.js" />
 	</definition>
 	<definition name=".users.list" extends=".users.base">
 		<put-attribute name="body" value="/WEB-INF/views/users/list.jsp" />

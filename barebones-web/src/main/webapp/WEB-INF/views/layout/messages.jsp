@@ -7,3 +7,11 @@
 		<p>${error}</p>
 	</div>
 </c:if>
+
+<c:if test="${not empty message}">
+<div class="message-block">
+	<div class="ui success message">
+		${message}
+	</div>
+</div>
+</c:if>

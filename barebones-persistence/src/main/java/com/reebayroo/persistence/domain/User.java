@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 
 @Entity
@@ -21,6 +22,28 @@ public class User extends AbstractLongIdentifiedDomain {
 
 	@Column(nullable = false, length = 50)
 	private String password;
+
+	@Column(name="first_name", nullable = false, length = 50)
+	private String firstName;
+	
+	@Column(name="last_name", nullable = false, length = 50)
+	private String lastName;
+	
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(final String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(final String lastName) {
+		this.lastName = lastName;
+	}
 
 	@Override
 	public Long getId() {
@@ -47,8 +70,11 @@ public class User extends AbstractLongIdentifiedDomain {
 		this.password = password;
 	}
 
-	public void setUnhashedPassword(final String unhashed){
+	public void setRawPassword(final String unhashed){
 		setPassword(encode(unhashed));
+	}
+	public String getRawPassword(){
+		return StringUtils.EMPTY;
 	}
 
 	public static String encode(final String rawPassword) {

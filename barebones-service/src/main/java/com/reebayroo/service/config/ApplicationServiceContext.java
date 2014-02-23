@@ -10,7 +10,7 @@ import com.reebayroo.persistence.config.ApplicationPersistenceContext;
 
 
 @Configuration
-@ComponentScan(basePackages="com.reebayroo.service.")
+@ComponentScan(basePackages="com.reebayroo.service")
 @Import(ApplicationPersistenceContext.class)
 public class ApplicationServiceContext{
 

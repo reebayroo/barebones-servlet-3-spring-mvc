@@ -9,27 +9,24 @@ import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
-import com.reebayroo.service.config.ApplicationServiceContext;
-
 public class WebInitializer implements WebApplicationInitializer {
 
 	@Override
-	public void onStartup(ServletContext servletContext) throws ServletException {
-		AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
+	public void onStartup(final ServletContext servletContext) throws ServletException {
+		final AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
 
 		// Normal Spring Bean Context - Bean, Services, DAO's, etc.
 
-		ContextLoaderListener loaderListener = new ContextLoaderListener(rootContext);
+		final ContextLoaderListener loaderListener = new ContextLoaderListener(rootContext);
 		servletContext.addListener(loaderListener);
 
 //		AnnotationConfigWebApplicationContext dispatcherContext = new AnnotationConfigWebApplicationContext();
 
 		// Spring Web Context, Controllers, and such.
 		rootContext.register(ApplicationWebContext.class);
-		rootContext.register(ApplicationServiceContext.class);
 
-		DispatcherServlet dispatcherServlet = new DispatcherServlet(rootContext);
-		ServletRegistration.Dynamic dispatcher = servletContext.addServlet("DispatcherServlet", dispatcherServlet);
+		final DispatcherServlet dispatcherServlet = new DispatcherServlet(rootContext);
+		final ServletRegistration.Dynamic dispatcher = servletContext.addServlet("DispatcherServlet", dispatcherServlet);
 		dispatcher.setLoadOnStartup(1);
 		dispatcher.addMapping("/");
 

@@ -22,8 +22,10 @@ public class UserDaoTest extends AbstractTransactionalTest {
 	public void simpleSave() {
 
 		final User user = new User();
-		user.setUnhashedPassword("PASS");
+		user.setRawPassword("PASS");
 		user.setLogin("mylogin");
+		user.setLastName("last");
+		user.setFirstName("first");
 		assertTrue(user.isNew());
 		userDao.save(user);
 		assertFalse(user.isNew());
@@ -34,8 +36,10 @@ public class UserDaoTest extends AbstractTransactionalTest {
 	public void simpleFindAll() {
 
 		final User user = new User();
-		user.setUnhashedPassword("PASS");
+		user.setRawPassword("PASS");
 		user.setLogin("mylogin");
+		user.setLastName("last");
+		user.setFirstName("first");
 		assertTrue(user.isNew());
 		userDao.save(user);
 		assertFalse(user.isNew());
@@ -45,11 +49,14 @@ public class UserDaoTest extends AbstractTransactionalTest {
 	@Test
 	public void simpleLoad() {
 		final User user = new User();
-		user.setUnhashedPassword("PASS");
+		user.setRawPassword("PASS");
 		user.setLogin("mylogin");
+		user.setLastName("last");
+		user.setFirstName("first");
+		
 		assertTrue(user.isNew());
 		userDao.save(user);
 		assertFalse(user.isNew());
-		assertEquals(userDao.load(user.getId()) ,  user);
+		assertEquals(userDao.load(user.getId()), user);
 	}
 }

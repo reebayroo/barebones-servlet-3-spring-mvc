@@ -39,7 +39,7 @@
 
 
 	<c:if test="${not empty moduleScript}">
-		<custom:js src="/assets/js/modules/${moduleScript}" />
+		<custom:js src="/assets/javascript/modules/${moduleScript}" />
 	</c:if>
 </body>
 </html>
