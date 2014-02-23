@@ -6,9 +6,10 @@
 	 &#169; Copyright 2013, <a href="/">${applicationScope.systemProperties.companyName}</a></p>
 </footer>
 
-<custom:js src="/assets/js/libs/jquery-1.9.1.min.js"/>
+<%-- <custom:js src="/assets/js/libs/jquery-1.9.1.min.js"/>
 <custom:js src="/assets/js/libs/jquery.form.js"/>
 <custom:js src="/assets/js/libs/jquery.validate.min.js"/>
 <custom:js src="/assets/js/libs/additional-methods.min.js"/>
 <custom:js src="/assets/js/libs/jquery.dataTables.min.js"/> 
 <custom:js src="/assets/js/libs/bootstrap-datepicker.js"/> 
+ --%>

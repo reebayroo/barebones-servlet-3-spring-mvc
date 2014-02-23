@@ -27,6 +27,18 @@
 		<put-attribute name="body-class" type="string" value="about" />
 		<put-attribute name="title" type="string" value="About" />
 	</definition>
+	<definition name=".users.base" extends=".layout">
+		<put-attribute name="current-menu" value="users" />
+		<put-attribute name="body-class" type="string" value="users" />
+		<put-attribute name="module-script" type="string" value="users-ck.js" />
+	</definition>
+	<definition name=".users.list" extends=".users.base">
+		<put-attribute name="body" value="/WEB-INF/views/users/list.jsp" />
+	</definition>
+	<definition name=".users.edit" extends=".users.base">
+		<put-attribute name="body" value="/WEB-INF/views/users/edit.jsp" />
+
+	</definition>
 	
 <!-- 	<definition name=".login-layout" template="/WEB-INF/views/layout/login_layout.jsp">
 		<put-attribute name="header" value="/WEB-INF/views/layout/header.jsp" />
